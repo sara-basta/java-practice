@@ -87,10 +87,8 @@ public class EmployeeProcessor {
                 writer.newLine();
             }
 
-            System.out.println("Export terminé → " + list.size() + " employés écrits dans " + filename);
-
         } catch (IOException ex) {
-            System.out.println("Erreur lors de l'écriture du fichier : " + ex.getMessage());
+            System.out.println("Error during File reading: " + ex.getMessage());
         }
     }
 
