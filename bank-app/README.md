@@ -1,26 +1,15 @@
-# Banking Application - CLI
+# Week 1 - Bank App
 
-## Overview
-A command-line banking application demonstrating Java Object-Oriented Programming (OOP) fundamentals. This simple banking system allows users to create an account and manage their finances through a user-friendly menu interface.
+Simple console banking system (my very first Java project).
 
-## Features
--  Create a bank account with account holder name, account number, and initial deposit
--  Deposit money to the account
--  Withdraw money from the account (with balance validation to prevent overdrafts)
--  Check current account balance
--  Display complete account information (holder name, account number, balance)
--  Input validation and error handling
--  User-friendly menu-driven CLI interface
--  Prevention of negative balances
+### Features
+- Create account
+- Deposit / Withdraw money
+- Check balance
+- Display account info
 
-## Technologies Used
-- **Language:** Java 17+
-- **Concepts:** Object-Oriented Programming (OOP), Encapsulation, Data Validation
-- **Input Method:** Scanner for user input
-- **Architecture:** Menu-driven CLI application
-- **Data Structure:** Single account object storage
+### How to run
+Just run `BankApp.java`
 
-
-
-
-
+→ Choose options 1–6 in the menu.  
+No files, no dependencies - pure Java basics.

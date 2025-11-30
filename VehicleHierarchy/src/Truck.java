@@ -87,7 +87,7 @@ public class Truck extends Vehicule implements VehiculeOperations{
     {
         currentCargo+=weight;
         if(currentCargo>cargoCapacity){
-            System.out.println("Cannor exceed cargo capacity.");
+            System.out.println("Cannot exceed cargo capacity.");
 
         }
         System.out.println("Loaded "+weight+" kg.Current cargo : "+currentCargo+" kg.");

@@ -100,33 +100,33 @@ public class Main {
 
 
     static void update(ContactManager manager) throws ContactNotFoundException {
-        System.out.println("Entrez l’id du contact à modifier : ");
+        System.out.println("Enter the id to modify : ");
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Nouveau nom : ");
+        System.out.println("New name : ");
         String name = scanner.nextLine();
-        System.out.println("Nouveau numéro de téléphone : ");
+        System.out.println("New phone number : ");
         String phone = scanner.nextLine();
-        System.out.println("Nouvel email : ");
+        System.out.println("New email : ");
         String email = scanner.nextLine();
 
         Contact newData = new Contact(id, name, phone, email);
         manager.updateContact(id, newData);
-        System.out.println("Contact modifié !");
+        System.out.println("Contact added");
     }
     static void search(ContactManager manager) {
-        System.out.println("Entrez le nom à rechercher : ");
+        System.out.println("Enter the name to research : ");
         String name = scanner.nextLine();
         try {
             Contact result = manager.searchByName(name);
-            System.out.println("Contact trouvé : " + result.getId() + ", " + result.getName() + ", " + result.getPhone() + ", " + result.getEmail());
+            System.out.println("Contact found : " + result.getId() + ", " + result.getName() + ", " + result.getPhone() + ", " + result.getEmail());
         } catch (ContactNotFoundException e) {
             System.out.println(e.getMessage());
         }
     }
     static void display(ContactManager manager) {
-        System.out.println("Liste des contacts :");
+        System.out.println("List of contacts :");
         for (Contact c : manager.getContacts()) {
             System.out.println(c.getId() + ", " + c.getName() + ", " + c.getPhone() + ", " + c.getEmail());
         }

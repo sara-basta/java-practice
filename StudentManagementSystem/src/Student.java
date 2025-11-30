@@ -56,7 +56,7 @@ public class Student implements Comparable<Student>{
 
     @Override
     public int compareTo(Student other) {
-        // trie décroissant
+        // descending sort
         return Double.compare(other.grade, this.grade);
     }
 

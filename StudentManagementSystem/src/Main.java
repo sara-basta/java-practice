@@ -36,7 +36,7 @@ public class Main {
                     break;
                 case 0:
                     running = false;
-                    System.out.println("Goodbye!");
+                    System.out.println("Goodbye");
                     break;
                 default:
                     System.out.println("Invalid option. Try again.");
@@ -82,7 +82,7 @@ public class Main {
         Student student = new Student(id, name, age, grade, major);
         manager.addStudent(student);
 
-        System.out.println("✓ Student added successfully!");
+        System.out.println("Student added successfully");
     }
 
 
@@ -91,9 +91,9 @@ public class Main {
         int id = getIntInput("Enter student ID to remove: ");
 
         if (manager.removeStudent(id)) {
-            System.out.println("✓ Student removed successfully!");
+            System.out.println("Student removed successfully!");
         } else {
-            System.out.println("✗ Student not found.");
+            System.out.println("Student not found.");
         }
     }
 
@@ -107,10 +107,10 @@ public class Main {
         Optional<Student> result = manager.findByName(name);
 
         if (result.isPresent()) {
-            System.out.println("\n✓ Student found:");
+            System.out.println("\nStudent found:");
             System.out.println(result.get());
         } else {
-            System.out.println("✗ Student not found.");
+            System.out.println("Student not found.");
         }
     }
 
@@ -124,11 +124,11 @@ public class Main {
         switch (choice) {
             case 1:
                 manager.sortByGrade();
-                System.out.println("✓ Students sorted by grade (descending)");
+                System.out.println("Students sorted by grade (descending)");
                 break;
             case 2:
                 manager.sortByName();
-                System.out.println("✓ Students sorted by name (alphabetical)");
+                System.out.println("Students sorted by name (alphabetical)");
                 break;
             default:
                 System.out.println("Invalid option.");

@@ -17,22 +17,6 @@ public class Car extends Vehicule implements VehiculeOperations{
         System.out.println(getModel()+"Car has started!");
     }
 
-    public int getNumDoors() {
-        return numDoors;
-    }
-
-    public String getTransmission() {
-        return transmission;
-    }
-
-    public boolean isTrunkOpen() {
-        return trunkOpen;
-    }
-
-    public boolean isHeadlightsOn() {
-        return headlightsOn;
-    }
-
     @Override
     public void stop(){
         System.out.println(getModel()+"Car has stopped!");

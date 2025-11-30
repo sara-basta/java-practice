@@ -13,13 +13,10 @@ public class StudentManager {
         }
         students.add(s);
         studentIds.add(s.getId());
-        // Vérifier si la filière existe déjà dans la HashMap
         if (!studentsPerMajor.containsKey(s.getMajor())) {
-            // Créer une nouvelle liste pour cette filière
             studentsPerMajor.put(s.getMajor(), new ArrayList<>());
         }
 
-        // Ajouter l'étudiant à la liste de sa filière
         studentsPerMajor.get(s.getMajor()).add(s);
     }
 
@@ -58,7 +55,7 @@ public class StudentManager {
 
     public Optional<Student> findByName(String name) {
         for (Student s : students) {
-            if (s.getName().equalsIgnoreCase(name)) {  // ✓ Case-insensitive
+            if (s.getName().equalsIgnoreCase(name)) {
                 return Optional.of(s);
             }
         }

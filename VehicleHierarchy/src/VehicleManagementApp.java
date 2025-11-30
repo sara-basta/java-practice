@@ -16,7 +16,6 @@ public class VehicleManagementApp {
     }
 
     public void run() {
-        // TODO: Main loop with menu
         while(true) {
             displayMenu();
             int option = scanner.nextInt();
@@ -164,7 +163,6 @@ public class VehicleManagementApp {
     }
 
     private void accelerateVehicle() {
-        // TODO: Select vehicle, get speed input, call accelerate()
         Vehicule v = selectVehicle();
         if (v == null) return;
 
@@ -177,7 +175,6 @@ public class VehicleManagementApp {
     }
 
     private void brakeVehicle() {
-        // TODO: Select vehicle, get speed input, call brake()
         Vehicule v = selectVehicle();
         if (v == null) return;
 
@@ -191,7 +188,6 @@ public class VehicleManagementApp {
     }
 
     private void displayVehicleInfo() {
-        // TODO: Select vehicle, call displayInfo(), check instanceof for type-specific info
         Vehicule v = selectVehicle();
         if (v == null) return;
 
@@ -207,7 +203,6 @@ public class VehicleManagementApp {
     }
 
     private void refuelVehicle() {
-        // TODO: Select vehicle and call refuel()
         Vehicule v = selectVehicle();
         if (v != null) {
             v.refuel();
@@ -215,7 +210,6 @@ public class VehicleManagementApp {
     }
 
     private void carBikeFeatures() {
-        // TODO: Select vehicle, check instanceof, call carSpecificFeatures or bikeSpecificFeatures
         Vehicule v = selectVehicle();
         if (v == null) return;
 
@@ -229,7 +223,6 @@ public class VehicleManagementApp {
     }
 
     private void carSpecificFeatures(Car car) {
-        // TODO: Show car menu, get choice, call car methods (honk, trunk, headlights)
         System.out.println("\n--- Car Features ---");
         System.out.println("1. Honk");
         System.out.println("2. Turn ON Headlights");
@@ -252,7 +245,6 @@ public class VehicleManagementApp {
     }
 
     private void bikeSpecificFeatures(Bike bike) {
-        // TODO: Show bike menu, get choice, call bike methods (wheelie, sidecar)
         System.out.println("\n--- Bike Features ---");
         System.out.println("1. Honk");
         System.out.println("2. Turn ON Headlight");
@@ -277,7 +269,6 @@ public class VehicleManagementApp {
     }
 
     private void truckFeatures() {
-        // TODO: Select vehicle, check instanceof, call truckSpecificFeatures
         Vehicule v = selectVehicle();
         if (v == null) return;
 
@@ -289,7 +280,6 @@ public class VehicleManagementApp {
     }
 
     private void truckSpecificFeatures(Truck truck) {
-        // TODO: Show truck menu, get choice, call truck methods (load/unload cargo)
         System.out.println("\n--- Truck Features ---");
         System.out.println("1. Load Cargo");
         System.out.println("2. Unload Cargo");
@@ -325,7 +315,6 @@ public class VehicleManagementApp {
     }
 
     private void listAllVehicles() {
-        // TODO: Loop through vehicles and print info
         if (vehicles.isEmpty()) {
             System.out.println("No vehicles in the system.");
             return;
