@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class StudentManager {
     ArrayList<Student> students = new ArrayList<>();
@@ -54,12 +55,17 @@ public class StudentManager {
 //    }
 
     public Optional<Student> findByName(String name) {
-        for (Student s : students) {
-            if (s.getName().equalsIgnoreCase(name)) {
-                return Optional.of(s);
-            }
-        }
-        return Optional.empty();
+//        for (Student s : students) {
+//            if (s.getName().equalsIgnoreCase(name)) {
+//                return Optional.of(s);
+//            }
+//        }
+         return students.stream()
+                .filter(s -> s.getName().equals(name))
+                 .findFirst();
+
+
+//        return Optional.empty();
     }
 
 
@@ -67,6 +73,11 @@ public class StudentManager {
         return studentsPerMajor.getOrDefault(major, new ArrayList<>());
     }
 
+    public Student getTopStudent(){
+        return students.stream()
+                .reduce((a,b)->a.getGrade() > b.getGrade() ? a : b)
+                .orElse(null);
+    }
 
     public void displayAll() {
         if (students.isEmpty()) {
