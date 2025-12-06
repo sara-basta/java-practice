@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
@@ -8,15 +9,11 @@ import java.util.stream.Collectors;
 
 public class LogParser {
 
-    public static List<Workout> readCSV(String filename){
-        List<Workout> workouts = List.of();
+    public static List<Workout> workouts(String filename){
+        List<Workout> workouts;
         try{
-
             // loading the data
-            List<LogEntry> listEntries = Files.lines(Path.of(filename))
-                    .skip(1)
-                    .map(LogParser::getLogEntry)
-                    .toList();
+            List<LogEntry> listEntries = getAllEntries(filename);
 
             // grouping entries by date
             Map<LocalDate, List<LogEntry>> groupedPerDate = listEntries.stream()
@@ -51,8 +48,22 @@ public class LogParser {
         return new LogEntry(date, ExerciseName, sets, reps, weights);
     }
 
+    public static List<LogEntry> getAllEntries(String filename) {
+        List<LogEntry> listEntries;
+        try {
+            listEntries = Files.lines(Path.of(filename))
+                    .skip(1)
+                    .map(LogParser::getLogEntry)
+                    .toList();
+        } catch (Exception e) {
+            System.err.println("CSV parse error: " + e.getMessage());
+            return List.of();
+        }
+        return listEntries;
+    }
+
     public static void main(String[] args) {
-        List<Workout> workouts = readCSV("data.csv");
+        List<Workout> workouts = workouts("data.csv");
         System.out.println("Parsed Workouts:");
         workouts.forEach(System.out::println);
     }

@@ -17,7 +17,7 @@ public class CsvWriter {
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("data.csv"))){
             writer.write(header);
             writer.newLine();
-            for (int i=1; i<50; i++){
+            for (int i=1; i<10; i++){
                 LocalDate currentDate = LocalDate.now();
                 String exerciseName = exercises[rand.nextInt(exercises.length)];
                 int sets = 3 + rand.nextInt(3); // 3 to 5 sets
