@@ -93,7 +93,7 @@ public class EmployeeProcessor {
     }
 
     public void exportHighEarnersYoung() {
-        writeToCSV(getHighEarnersYoung(), "C:\\Users\\sarab\\Desktop\\output.csv");
+        writeToCSV(getHighEarnersYoung(), "output.csv");
     }
 }
 
