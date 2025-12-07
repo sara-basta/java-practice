@@ -6,7 +6,7 @@ public class EmployeeProcessor {
     static List<Employe> employees = new ArrayList<>();
 
     public void loadEmployees() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\sarab\\Desktop\\list_of_employees.csv"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("list_of_employees.csv"))) {
             String line = reader.readLine();
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");

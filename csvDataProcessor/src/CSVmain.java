@@ -12,7 +12,7 @@ public class CSVmain {
 
 
 
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\sarab\\Desktop\\list_of_employees.csv"))){
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("list_of_employees.csv"))){
             writer.write("id,name,dept,salary,age");
             writer.newLine();
             Random rand = new Random();
