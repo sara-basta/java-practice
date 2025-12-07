@@ -61,12 +61,4 @@ public class LogParser {
         }
         return listEntries;
     }
-
-    public static void main(String[] args) {
-        List<Workout> workouts = workouts("data.csv");
-        System.out.println("Parsed Workouts:");
-        workouts.forEach(System.out::println);
-    }
-
-
 }
