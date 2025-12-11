@@ -3,7 +3,7 @@ package com.sara.basta.threading;
 public class DownloadTask {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Runnable runnable = new Runnable() {
             @Override
@@ -14,7 +14,7 @@ public class DownloadTask {
                     try {
                         Thread.sleep(2000);
                         long diff = System.currentTimeMillis()-currentTime;
-                        System.out.println("Time it took : "+ diff);
+                        System.out.println("Time it took : (sequential) "+ diff);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
@@ -32,6 +32,7 @@ public class DownloadTask {
         Thread t8 = new Thread(runnable);
         Thread t9 = new Thread(runnable);
         Thread t10 = new Thread(runnable);
+        long threadStartTime = System.currentTimeMillis();
         t1.start();
         t2.start();
         t3.start();
@@ -42,5 +43,34 @@ public class DownloadTask {
         t8.start();
         t9.start();
         t10.start();
+
+        try {
+            t1.join();
+            System.out.println("t1 finished!");
+            t2.join();
+            System.out.println("t2 finished!");
+            t3.join();
+            System.out.println("t3 finished!");
+            t4.join();
+            System.out.println("t4 finished!");
+            t5.join();
+            System.out.println("t5 finished!");
+            t6.join();
+            System.out.println("t6 finished!");
+            t7.join();
+            System.out.println("t7 finished!");
+            t8.join();
+            System.out.println("t8 finished!");
+            t9.join();
+            System.out.println("t9 finished!");
+            t10.join();
+            System.out.println("t10 finished!");
+            long threadEndTime = System.currentTimeMillis();
+            long threadDiff = threadEndTime - threadStartTime;
+            System.out.println("time the main thread took (concurrency): "+ threadDiff );
+        }
+        catch(InterruptedException ie){
+            System.out.println("Problem happened "+ie);
+        }
     }
 }
