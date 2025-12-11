@@ -6,6 +6,7 @@ My weekly Java learning projects - one folder = one week/concept.
 
 | Folder                     | Week | Concept viewed                                | Status   |
 |----------------------------|------|-----------------------------------------------|----------|
+| `concurrent-downloader`    | W6   | Multithreading & concurrency                  | On Going |
 | `FitnessWorkoutLogAnalyzer`| W5   | Stream API, Records, Maven, JUnit             | Done     |
 | `csvDataProcessor`         | W4   | Stream API, lambdas, Collectors, CSV I/O      | Done     |
 | `ContactManagement`        | W3   | OOP + Collections                             | Done     |
